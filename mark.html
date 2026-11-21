@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jhon Mark Minoza | Student Portfolio</title>
+
+    <meta name="description" content="Jhon Mark B. Minoza's BSIT student portfolio showcasing web development skills, projects, and learning experiences.">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+        // Load saved theme before displaying the page
+        const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+        document.documentElement.dataset.theme = savedTheme;
+    </script>
+
+    <style>
+        :root {
+            color-scheme: dark;
+
+            --bg: #211813;
+            --surface: #35261e;
+            --border: #594438;
+            --text: #f0aa5b;
+            --muted: #d8c7b7;
+            --accent: #d6a77a;
+            --accent-hover: #e7bd94;
+            --button-text: #211813;
+            --header-bg: rgba(33, 24, 19, 0.95);
+        }
+
+        [data-theme="light"] {
+            color-scheme: light;
+
+            --bg: #f7f0e8;
+            --surface: #fffaf4;
+            --border: #d8c3ad;
+            --text: #493326;
+            --muted: #725e50;
+            --accent: #9a6742;
+            --accent-hover: #b27d55;
+            --button-text: #ffffff;
+            --header-bg: rgba(247, 240, 232, 0.95);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background: var(--header-bg) !important;
+            border-color: var(--border) !important;
+        }
+
+        .surface {
+            background: var(--surface) !important;
+            border-color: var(--border) !important;
+        }
+
+        .border-theme {
+            border-color: var(--border) !important;
+        }
+
+        .text-muted {
+            color: var(--muted) !important;
+        }
+
+        .text-accent {
+            color: var(--accent) !important;
+        }
+
+        .accent-button {
+            background: var(--accent);
+            color: var(--button-text);
+        }
+
+        .accent-button:hover {
+            background: var(--accent-hover);
+        }
+
+        .outline-button {
+            border: 1px solid var(--accent);
+            color: var(--text);
+        }
+
+        .outline-button:hover {
+            background: var(--surface);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 5px;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .profile-image {
+            transition: transform 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+
+        .theme-toggle {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 4;
+            padding: 4px 8.5px;
+            font-size: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans leading-relaxed">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 border-b backdrop-blur-md">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+
+            <a href="#home" class="text-xl font-bold tracking-tight">
+                Jhon Mark B. Minoza<span class="text-accent">.</span>
+            </a>
+
+            <nav class="flex flex-wrap items-center gap-4 sm:gap-6" aria-label="Main navigation">
+
+                <a href="#home" class="text-sm text-muted hover:text-accent">Home</a>
+                <a href="#about" class="text-sm text-muted hover:text-accent">About</a>
+                <a href="#skills" class="text-sm text-muted hover:text-accent">Skills</a>
+                <a href="#projects" class="text-sm text-muted hover:text-accent">Projects</a>
+                <a href="#contact" class="text-sm text-muted hover:text-accent">Contact</a>
+
+                <!-- THEME TOGGLE -->
+                <button
+                    id="themeToggle"
+                    class="theme-toggle"
+                    type="button"
+                    aria-label="Switch to light mode"
+                    onclick="toggleTheme()"
+                >
+                    Light Mode
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="mx-auto max-w-6xl px-6">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="grid items-center gap-12 py-16 md:grid-cols-2 md:py-24">
+
+            <div>
+
+                <p class="mb-5 font-mono text-sm tracking-widest text-accent">
+                    BSIT STUDENT / FIRST YEAR
+                </p>
+
+                <h1 class="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-6xl">
+                    Hi, I'm Jhon Mark,
+
+                    <span class="mt-2 block text-accent">
+                        Still Learning,
+                        Start Creating,
+                        and Keep Growing.
+                    </span>
+                </h1>
+
+                <p class="max-w-xl text-lg text-muted">
+                    I'm Jhon Mark B. Minoza, a first-year Bachelor of Science in Information Technology student.
+
+                    I am passionate about technology, creativity, and learning how to build useful and responsive websites.
+
+                    This portfolio showcases my skills, school activities, and projects as I continue developing my knowledge in IT.
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-4">
+
+                    <a href="#projects"
+                       class="accent-button rounded-md px-6 py-3 font-semibold transition">
+                        Explore My Projects
+                    </a>
+
+                    <a href="#contact"
+                       class="outline-button rounded-md px-6 py-3 font-semibold transition">
+                        Contact Me
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- PROFILE PICTURE -->
+            <figure class="mx-auto w-full max-w-sm">
+
+                <img
+                    src="assets/images/JhonMark.Pfp.png.png"
+                    alt="Profile picture of Jhon Mark B. Minoza"
+                    class="profile-image aspect-square w-full rounded-2xl border-2 border-theme surface object-cover shadow-2xl"
+                    width="600"
+                    height="600"
+                >
+
+                <figcaption class="mt-4 flex justify-between gap-4 text-sm text-muted">
+                    <span>Jhon Mark B. Minoza</span>
+                    <span>BSIT · First Year</span>
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="grid gap-12 border-t border-theme py-20 md:grid-cols-2">
+
+            <div>
+
+                <p class="mb-4 font-mono text-sm tracking-widest text-accent">
+                    ABOUT ME
+                </p>
+
+                <h2 class="mb-6 text-4xl font-bold tracking-tight">
+                    Getting started with technology.
+                </h2>
+
+                <p class="mb-5 text-muted">
+                    My name is Jhon Mark B. Minoza, and I am currently a first-year Bachelor of Science in Information Technology student.
+
+                    I chose this course because I am interested in computers, programming, and the different possibilities technology can offer.
+                </p>
+
+                <p class="mb-5 text-muted">
+                    As a beginner in the IT field, I am continuously learning how to write code, design websites, solve programming problems, and understand how computer systems work.
+                </p>
+
+                <p class="text-muted">
+                    Outside academics, I enjoy listening to music, playing games, and spending time with friends.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="surface rounded-xl border p-7">
+
+                    <p class="mb-4 font-mono text-xs tracking-widest text-accent">
+                        EDUCATION
+                    </p>
+
+                    <h3 class="mb-3 text-2xl font-bold">
+                        Bachelor of Science in Information Technology
+                    </h3>
+
+                    <p class="mb-4 text-accent">
+                        First Year · 2026 – Present
+                    </p>
+
+                    <p class="text-muted">
+                        Currently studying programming fundamentals, web development, computer systems, and information technology.
+                    </p>
+
+                </div>
+
+
+                <div class="surface mt-6 rounded-xl border p-7">
+
+                    <p class="mb-3 font-mono text-xs tracking-widest text-accent">
+                        MY GOAL
+                    </p>
+
+                    <p class="text-muted">
+                        To become a skilled IT professional who can create meaningful digital solutions, develop useful applications, and continuously improve through learning and experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="border-t border-theme py-20">
+
+            <p class="mb-4 font-mono text-sm tracking-widest text-accent">
+                MY TECHNICAL SKILLS
+            </p>
+
+            <h2 class="mb-4 text-4xl font-bold">
+                What I'm learning and what i have learned from Previous years.
+            </h2>
+
+            <p class="mb-10 max-w-2xl text-muted">
+                These are the technologies, programming concepts, and practical technical skills I am currently studying and developing.
+            </p>
+
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- HTML -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">01</p>
+                    <h3 class="mb-3 text-2xl font-bold">HTML</h3>
+                    <p class="text-sm text-muted">
+                        Building webpage structures using headings, paragraphs, images, links, and forms.
+                    </p>
+                </article>
+
+
+                <!-- CSS -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">02</p>
+                    <h3 class="mb-3 text-2xl font-bold">CSS</h3>
+                    <p class="text-sm text-muted">
+                        Learning colors, typography, layouts, Flexbox, grids, and responsive design.
+                    </p>
+                </article>
+
+
+                <!-- TAILWIND -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">03</p>
+                    <h3 class="mb-3 text-2xl font-bold">Tailwind CSS</h3>
+                    <p class="text-sm text-muted">
+                        Creating modern and responsive interfaces using utility classes.
+                    </p>
+                </article>
+
+
+                <!-- C PROGRAMMING -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">04</p>
+                    <h3 class="mb-3 text-2xl font-bold">C Programming</h3>
+                    <p class="text-sm text-muted">
+                        Practicing variables, conditions, loops, functions, arrays, and pointers.
+                    </p>
+                </article>
+
+
+                <!-- BASIC WIRING SKILLS -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">05</p>
+                    <h3 class="mb-3 text-2xl font-bold">Basic Wiring Skills</h3>
+                    <p class="text-sm text-muted">
+                        Developing practical knowledge of basic electrical wiring, Fire Detection and Alarm System (FDAS), CCTV installation, cable connections, and basic system setup.
+                    </p>
+                </article>
+
+
+
+                <!-- BASIC WIRING SKILLS -->
+                <article class="surface rounded-xl border p-6">
+                    <p class="mb-4 font-mono text-xs text-accent">06</p>
+                    <h3 class="mb-3 text-2xl font-bold">Auxiliary Mounting</h3>
+                    <p class="text-sm text-muted">
+                       Auxiliary is where the wires are connected and being spliced also you can troubleshoot thier.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="border-t border-theme py-20">
+
+            <p class="mb-4 font-mono text-sm tracking-widest text-accent">
+                MY WORK
+            </p>
+
+            <h2 class="mb-5 text-4xl font-bold">
+                Projects & Activities
+            </h2>
+
+            <p class="mb-12 max-w-2xl text-muted">
+                Here are some of my school projects and creative activities. Each project represents an opportunity to practice my skills and improve my knowledge.
+            </p>
+
+
+            <div class="grid gap-8 md:grid-cols-2">
+
+
+                <!-- PROJECT 1 -->
+                <article class="project-card surface overflow-hidden rounded-xl border">
+
+                    <a href="assets/images/CyberSecurity_flyers.png" target="_blank" rel="noopener noreferrer">
+                        <img
+                            src="assets/images/CyberSecurity_flyers.png"
+                            alt="Cybersecurity flyer project"
+                            class="h-64 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <div class="p-7">
+
+                        <p class="mb-3 font-mono text-xs tracking-widest text-accent">
+                            01 / GRAPHIC DESIGN
+                        </p>
+
+                        <h3 class="mb-3 text-2xl font-bold">
+                            Cybersecurity Awareness Flyer
+                        </h3>
+
+                        <p class="mb-5 text-sm text-muted">
+                            A cybersecurity awareness design project focused on digital safety, protecting information, and understanding the importance of online security.
+                        </p>
+
+                        <a href="assets/images/CyberSecurity_flyers.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-sm font-semibold text-accent underline underline-offset-4">
+                            View Project →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJECT 2 -->
+                <article class="project-card surface overflow-hidden rounded-xl border">
+
+                    <a href="assets/images/E-Portfolio.GoogleSites.png" target="_blank" rel="noopener noreferrer">
+                        <img
+                            src="assets/images/E-Portfolio.GoogleSites.png"
+                            alt="Google Sites electronic portfolio project"
+                            class="h-64 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <div class="p-7">
+
+                        <p class="mb-3 font-mono text-xs tracking-widest text-accent">
+                            02 / WEB DESIGN
+                        </p>
+
+                        <h3 class="mb-3 text-2xl font-bold">
+                            Google Sites E-Portfolio
+                        </h3>
+
+                        <p class="mb-5 text-sm text-muted">
+                            An electronic portfolio created using Google Sites to organize personal information, school activities, and learning experiences.
+                        </p>
+
+                        <a href="assets/images/E-Portfolio.GoogleSites.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-sm font-semibold text-accent underline underline-offset-4">
+                            View Project →
+                        </a>
+
+                    </div>
+                </article>
+
+
+                <!-- PROJECT 3 -->
+                <article class="project-card surface overflow-hidden rounded-xl border">
+
+                    <a href="assets/images/EIMBasicwiring.jpg" target="_blank" rel="noopener noreferrer">
+                        <img
+                            src="assets/images/EIMBasicwiring.jpg"
+                            alt="Restaurant menu web design project"
+                            class="h-64 w-full object-cover"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <div class="p-7">
+
+                        <p class="mb-3 font-mono text-xs tracking-widest text-accent">
+                            03 / Electrical Installation and Maintenance
+                        </p>
+
+                        <h3 class="mb-3 text-2xl font-bold">
+                            Basic Wirig, and mounting auxiliary
+                        </h3>
+
+                        <p class="mb-5 text-sm text-muted">
+                         Install wiring devices of floor and wallmounted outlets, lighting
+                           fixtures/switches,and auxiliary outlets                        
+                        </p>
+
+                        <a href="assets/images/EIMBasicwiring.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="text-sm font-semibold text-accent underline underline-offset-4">
+                            View Project →
+                        </a>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="grid gap-12 border-t border-theme py-20 md:grid-cols-2">
+
+            <div>
+
+                <p class="mb-4 font-mono text-sm tracking-widest text-accent">
+                    GET IN TOUCH
+                </p>
+
+                <h2 class="mb-6 text-4xl font-bold md:text-5xl">
+                    Let's connect and create something.
+                </h2>
+
+                <p class="max-w-lg text-muted">
+                    Have a question, project idea, or opportunity? Feel free to contact me through email. I would be happy to connect, share ideas, and learn together.
+                </p>
+
+            </div>
+
+
+            <div class="surface rounded-xl border p-8">
+
+                <p class="mb-4 font-mono text-xs tracking-widest text-accent">
+                    EMAIL ADDRESS
+                </p>
+
+                <a
+                    href="mailto:jhonmarkminoza11@gmail.com"
+                    class="break-all text-xl font-bold text-accent underline underline-offset-4"
+                >
+                    jhonmarkminoza11@gmail.com
+                </a>
+
+
+                <div class="mt-8 border-t border-theme pt-6">
+
+                    <p class="mb-3 text-sm text-muted">Location</p>
+
+                    <p class="font-semibold">
+                        Ibabao Basak Lapu-Lapu City, Cebu Philippines (6015)
+                    </p>
+
+
+                    <p class="mb-3 mt-6 text-sm text-muted">Education</p>
+
+                    <p class="font-semibold">
+                        Bachelor of Science in Information Technology
+                    </p>
+
+
+                    <p class="mb-3 mt-6 text-sm text-muted">School</p>
+
+                    <p class="font-semibold">
+                        Cordova Public College (CPC)
+                    </p>
+
+
+                    <a
+                        href="mailto:jhonmarkminoza11@gmail.com?subject=Portfolio%20Inquiry"
+                        class="accent-button mt-8 inline-block rounded-md px-6 py-3 font-semibold transition"
+                    >
+                        Send Me an Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="border-t border-theme">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-4 px-6 py-8 text-sm text-muted">
+
+            <p>
+                © 2026 Jhon Mark Minoza. All Rights Reserved.
+            </p>
+
+            <a href="#home" class="text-accent">
+                Back to Top ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- DARK / LIGHT MODE JAVASCRIPT -->
+    <script>
+
+        function applyTheme(theme) {
+
+            document.documentElement.dataset.theme = theme;
+
+            localStorage.setItem("portfolio-theme", theme);
+
+            const button = document.getElementById("themeToggle");
+
+            if (theme === "dark") {
+
+                button.innerHTML = "Light Mode";
+                button.setAttribute("aria-label", "Switch to light mode");
+
+            } else {
+
+                button.innerHTML = "Dark Mode";
+                button.setAttribute("aria-label", "Switch to dark mode");
+
+            }
+
+        }
+
+
+        function toggleTheme() {
+
+            const currentTheme =
+                document.documentElement.dataset.theme;
+
+            const newTheme =
+                currentTheme === "dark" ? "light" : "dark";
+
+            applyTheme(newTheme);
+
+        }
+
+
+
+        // Apply saved theme when the page loads
+        applyTheme(
+            document.documentElement.dataset.theme || "dark"
+        );
+
+    </script>
+
+</body>
+</html>
